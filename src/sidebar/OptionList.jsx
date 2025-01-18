@@ -5,7 +5,7 @@ export default function OptionList({ menus }) {
     <div className="menu-upper">
       <ul className="menu-links">
         {menus.map((menu) => (
-          <Option key={menu.id} option={menu.option} nameIcon={menu.nameIcon} />
+          <Option key={menu.id} option={menu.option} nameIcon={menu.nameIcon} path={menu.navigate} />
         ))}
       </ul>
     </div>

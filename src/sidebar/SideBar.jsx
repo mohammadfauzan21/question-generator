@@ -7,10 +7,10 @@ import "./styles.css";
 
 let id = 0;
 const initialMenusUp = [
-  { id: id++, option: "Practice Test", nameIcon: "crown" },
-  { id: id++, option: "History Test", nameIcon: "folder" },
-  { id: id++, option: "About Us", nameIcon: "pin" },
-  { id: id++, option: "Contact Us", nameIcon: "conversation" },
+  { id: id++, option: "Practice Test", nameIcon: "crown", navigate: "/" },
+  { id: id++, option: "History Test", nameIcon: "folder", navigate: "/history-test"  },
+  { id: id++, option: "About Us", nameIcon: "pin", navigate: "/about-us"  },
+  { id: id++, option: "Contact Us", nameIcon: "conversation", navigate: "/contact-us"  },
 ];
 
 export default function SideBar() {

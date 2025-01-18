@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Option({ option, nameIcon }) {
+export default function Option({ option, nameIcon, path }) {
+    const navigate = useNavigate();
     const [isClicked, setIsClicked] = useState(false);
 
     let component;
@@ -8,7 +10,7 @@ export default function Option({ option, nameIcon }) {
     if(isClicked){
         component = (
             <li className="nav-link">
-                <a href="">
+                <a onClick={() => navigate(path)}>
                     <div className="box-icon">
                         <i className={`bx bx-${nameIcon} icon`}></i>
                     </div>
@@ -19,7 +21,7 @@ export default function Option({ option, nameIcon }) {
     }else{
         component = (
             <li className="nav-link">
-                <a href="">
+                <a onClick={() => navigate(path)}>
                     <div className="box-icon">
                         <i className={`bx bx-${nameIcon} icon`}></i>
                     </div>
