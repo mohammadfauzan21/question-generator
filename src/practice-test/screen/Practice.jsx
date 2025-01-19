@@ -1,9 +1,14 @@
 import React from 'react'
-import SideBar from '../../sidebar/SideBar'
+import "/src/styles.css";
 
 const Practice = () => {
   return (
-    <SideBar />
+    <section className="practice">
+      <div className="content">
+        <h1 className="text">Upload PDF</h1>
+        <div className="core-content">Core Content</div>
+      </div>
+    </section>
   )
 }
 

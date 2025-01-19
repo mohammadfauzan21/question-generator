@@ -66,7 +66,7 @@ body{
     width: 250px;
     padding: 10px 14px;
     background-color: var(--sidebar-color);
-    transition: var(--tran-05);
+    transition: var(--tran-04);
     z-index: 100;
 }
 
@@ -213,4 +213,90 @@ body{
 
 .sidebar .menu-bar .profile-link .text {
     color: var(--text-color);
+}
+
+
+/* ========= Section Practice ========= */
+.practice {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: red;
+    transition: var(--tran-05);
+}
+
+.sidebar.close ~ .practice {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.practice .content {
+    margin: 3% 0;
+    background-color: aquamarine;
+    width: 80%;
+    height: 90%;
+}
+
+.practice .content .text {
+    /* color: var(--text-color); */
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.practice .content .core-content{
+    padding: 20px 40px 20px 40px; /* top right bottom left*/
+    background-color: bisque;
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+}
+
+
+/* ========= Section history ========= */
+.history {
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: yellowgreen;
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.history {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+
+/* ========= Section about ========= */
+.about {
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: purple;
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.about {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+
+/* ========= Section contact ========= */
+.contact {
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: pink;
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.contact {
+    left: 88px;
+    width: calc(100% - 88px);
 }

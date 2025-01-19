@@ -3,7 +3,7 @@ import OptionList from "./OptionList";
 import Option from "./Option";
 import Profile from "./Profile";
 import logo from "../assets/logo.png";
-import "./styles.css";
+import "/src/styles.css";
 
 let id = 0;
 const initialMenusUp = [
