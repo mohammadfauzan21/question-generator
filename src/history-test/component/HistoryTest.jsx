@@ -1,29 +1,27 @@
 import React from 'react'
-import "/src/styles.css";
-import SlotUpload from '../component/SlotUpload';
-import ButtonCustom from '../component/ButtonCustom';
-import QuestionList from '../component/QuestionList';
+import { useNavigate } from "react-router-dom";
 
-// let id = 0;
-// const initialQuestions = [
-//   { id: id++, option: "Practice Test", nameIcon: "crown", navigate: "/" },
-//   { id: id++, option: "History Test", nameIcon: "folder", navigate: "/history-test"  },
-//   { id: id++, option: "About Us", nameIcon: "pin", navigate: "/about-us"  },
-//   { id: id++, option: "Contact Us", nameIcon: "conversation", navigate: "/contact-us"  },
-// ];
+const History = () => {
+    const navigate = useNavigate();
 
-const Practice = () => {
-  return (
-    <section className="practice">
-      <div className="content">
-        <h1 className="header-text">Upload Your PDF</h1>
-        <div className="core-content">
-          <SlotUpload />
-          <ButtonCustom name="Generate" />
-          <QuestionList />
-          {/* <div className="content-question">
-            For Question <br />
-            Teknologi telah menjadi bagian tak terpisahkan dari kehidupan manusia di era modern ini. Kemajuan teknologi memengaruhi hampir semua aspek kehidupan, mulai dari komunikasi, pendidikan, pekerjaan, hingga hiburan. Keberadaan teknologi memberikan dampak positif yang luar biasa, namun juga membawa tantangan yang perlu dihadapi dengan bijak.
+    return (
+        <button className='box-history' onClick={() => navigate("/history-test/review-history")}>
+            <div className="more-action">
+                <div className="box-logo">
+                    <img src="/src/assets/logo.png" alt="logo" />
+                </div>
+                <p>
+                    Review Test
+                    <span>
+                        <i className="bx bx-chevron-right icon"></i>
+                    </span>
+                </p>
+            </div>
+            <div className="history-section">
+                <div className="description">
+                    <div className="title-history">
+                        <p>
+                            Teknologi telah menjadi bagian tak terpisahkan dari kehidupan manusia di era modern ini. Kemajuan teknologi memengaruhi hampir semua aspek kehidupan, mulai dari komunikasi, pendidikan, pekerjaan, hingga hiburan. Keberadaan teknologi memberikan dampak positif yang luar biasa, namun juga membawa tantangan yang perlu dihadapi dengan bijak.
 
             Salah satu dampak terbesar dari teknologi adalah kemudahan dalam berkomunikasi. Dahulu, komunikasi jarak jauh membutuhkan waktu yang lama, misalnya melalui surat atau telegram. Namun, dengan adanya teknologi seperti telepon pintar, internet, dan media sosial, komunikasi menjadi lebih cepat dan efisien. Orang-orang dapat berbicara, mengirim pesan, bahkan melakukan panggilan video secara real-time meskipun berada di belahan dunia yang berbeda. Hal ini tidak hanya meningkatkan hubungan personal, tetapi juga mendukung kerja sama lintas negara dalam dunia bisnis dan pendidikan.
 
@@ -35,12 +33,25 @@ const Practice = () => {
 
             Di sisi lain, teknologi juga memiliki dampak negatif yang tidak boleh diabaikan. Salah satu masalah terbesar adalah meningkatnya ketergantungan pada teknologi, yang dapat menyebabkan gangguan kesehatan mental seperti kecemasan dan stres. Media sosial, misalnya, seringkali menciptakan tekanan sosial dan membandingkan diri dengan orang lain. Selain itu, isu privasi dan keamanan data juga menjadi perhatian utama. Dengan semakin banyaknya informasi pribadi yang tersimpan secara digital, ancaman terhadap pencurian data dan penyalahgunaan informasi semakin meningkat.
 
-            Sebagai kesimpulan, teknologi adalah pedang bermata dua. Di satu sisi, ia membawa kemudahan, efisiensi, dan peluang baru. Namun, di sisi lain, ia juga menghadirkan tantangan yang perlu diatasi. Oleh karena itu, penting bagi kita untuk menggunakan teknologi secara bijak dan bertanggung jawab, agar dampaknya dapat dimaksimalkan untuk kebaikan bersama. Dengan pendekatan yang tepat, teknologi dapat menjadi alat yang memperbaiki kualitas hidup manusia tanpa mengorbankan nilai-nilai kemanusiaan.
-          </div> */}
-        </div>
-      </div>
-    </section>
-  )
+            Sebagai kesimpulan
+                        </p>
+                    </div>
+                    <div className="date">
+                        <p>
+                            12/12/2021
+                        </p>
+                    </div>
+                </div>
+                <div className="score">
+                    <div className="box-score">
+                        <p>
+                            5/10
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </button>
+    )
 }
 
-export default Practice
+export default History

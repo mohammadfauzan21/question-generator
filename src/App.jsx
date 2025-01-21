@@ -5,6 +5,7 @@ import Practice from './practice-test/screen/Practice'
 import History from './history-test/screen/History'
 import About from './about-us/screen/About'
 import Contact from './contact-us/screen/Contact'
+import Review from './history-test/review-history/screen/Review'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/history-test" element={<History />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/history-test/review-history" element={<Review />} />
       </Routes>
     </Router>
   )

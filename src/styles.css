@@ -11,6 +11,7 @@
 :root{
     /* Colors */
     --body-color: #1C1714;
+    --card-color: #262524;
     --sidebar-color: #1D1C1B;
     --primary-color: #FF7816;
     --primary-color-hover: #504B48;
@@ -150,7 +151,8 @@ body{
 }
 
 .sidebar li a{
-    /* background-color: red; */
+    /* background-color: var(--primary-color-hover); */
+    border-radius: 24px;
     width: 100%;
     text-decoration: none;
     display: flex;
@@ -166,6 +168,8 @@ body{
 
 .sidebar li a .text {
     margin: 0 10px;
+    color: var(--primary-color-hover);
+    font-weight: bold;
 }
 
 .sidebar li a .box-icon{
@@ -190,6 +194,15 @@ body{
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
     color: var(--text-color);
+}
+
+.sidebar li a .icon{
+    color: var(--primary-color-hover);
+}
+
+.sidebar li a .box-icon {
+    /* background-color: var(--primary-color); */
+    border-radius: 12px;
 }
 
 .sidebar li a:hover .box-icon {
@@ -224,7 +237,7 @@ body{
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    background-color: red;
+    background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
@@ -235,38 +248,393 @@ body{
 
 .practice .content {
     margin: 3% 0;
-    background-color: aquamarine;
+    background-color: var(--body-color);
     width: 80%;
     height: 90%;
 }
 
-.practice .content .text {
-    /* color: var(--text-color); */
+.practice .content .header-text {
+    color: var(--text-color);
     margin-bottom: 20px;
     font-size: 20px;
 }
 
 .practice .content .core-content{
     padding: 20px 40px 20px 40px; /* top right bottom left*/
-    background-color: bisque;
+    background-color: var(--sidebar-color);
     width: 100%;
     height: calc(100% - 4% - 20px);
+}
+
+.practice .content .core-content .box-btn{
+    margin: 20px 0;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: var(--sidebar-color);
+}
+
+.practice .content .core-content .box-btn .btn-Generate {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.practice .content .core-content .box-btn .btn-Generate:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.practice .content .core-content .slot-upload {
+    background-color: var(--card-color);
+    padding: 20px 20px;
+    border: var(--text-color) 1px dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.practice .content .core-content .slot-upload:hover {
+    background-color: var(--primary-color);
+}
+
+.practice .content .core-content .slot-upload .description{
+    display: flex;
+    align-items: center;
+}
+
+.practice .content .core-content .slot-upload .icon{
+    font-size: 30px;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .slot-upload .text-upload {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.practice .content .core-content .slot-upload .child-text {
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .content-question {
+    position: relative;
+    background-color: var(--sidebar-color);
+    height: calc(100% - 23%);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.practice .content .core-content .content-question .box-question{
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.practice .content .core-content .content-question .box-question .question-section .text {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .content-question .box-question .option-section {
+    margin-top: 2%;
+}
+
+.practice .content .core-content .content-question .box-question .option-section button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.practice .content .core-content .content-question .box-question .option-section button:hover {
+    background-color: var(--primary-color-hover);
+    border-radius: 20px;
+}
+
+.practice .content .core-content .content-question .box-question .option-section button:hover .option {
+    background-color: var(--primary-color);
+}
+
+.practice .content .core-content .content-question .box-question .option-section .option {
+    background-color: var(--primary-color-hover);
+    padding: 3px 8px;
+    border-radius: 100%;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .content-question .box-question .option-section p {
+    margin-left: 5px;
+    color: var(--text-color);
 }
 
 
 /* ========= Section history ========= */
 .history {
     position: relative;
+    display: flex;
+    justify-content: center;
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    background-color: yellowgreen;
+    background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
 .sidebar.close~.history {
     left: 88px;
     width: calc(100% - 88px);
+}
+
+.history .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.history .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.history .content .core-content {
+    padding: 20px 40px 20px 40px;
+    /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+}
+
+.history .content .core-content .content-history {
+    position: relative;
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 1%);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.history .content .core-content .box-history {
+    background-color: var(--card-color);
+    width: 100%;
+    border-radius: 24px;
+    margin-bottom: 50px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.history .content .core-content .box-history:hover .more-action {
+    background-color: var(--primary-color);
+}
+
+.history .content .core-content .box-history .more-action {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--primary-color-hover);
+    border-radius: 24px 24px 0px 0px;
+    color: var(--body-color);
+}
+
+.history .content .core-content .box-history .more-action .box-logo {
+    /* background-color: yellowgreen; */
+    padding: 0 0;
+}
+
+.history .content .core-content .box-history .more-action .box-logo img {
+    width: 70px;
+}
+
+.history .content .core-content .box-history .history-section {
+    display: flex;
+    align-items: center;
+}
+
+.history .content .core-content .box-history .history-section .description {
+    width: 85%;
+    background-color: var(--card-color);
+    border-radius: 0px 0px 0px 24px;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.history .content .core-content .box-history .history-section .description .title-history {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--card-color);
+    width: 100%;
+    height: 23px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+}
+
+.history .content .core-content .box-history .history-section .description .date {
+    margin: 10px 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.history .content .core-content .box-history .history-section .score {
+    margin: auto;
+}
+
+.history .content .core-content .box-history .history-section .score .box-score {
+    border-radius: 100%;
+    padding: 20px 20px;
+    background-color: yellowgreen;
+}
+
+/* ========= Section review history ========= */
+.review {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.review {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.review .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.review .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.review .content .core-content {
+    padding: 20px 40px 20px 40px;
+    /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.review .content .core-content .description {
+    background-color: var(--sidebar-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.review .content .core-content .description .title{
+    font-size: 16px;
+    font-weight: bold;
+    /* background-color: var(--primary-color); */
+    width: 90%;
+    height: 23px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+}
+
+.review .content .core-content .description .score {
+    width: max-content;
+}
+
+.review .content .core-content .description .score .box-score {
+    border-radius: 100%;
+    padding: 20px 20px;
+    background-color: yellowgreen;
+}
+
+.review .content .core-content .content-question {
+    position: relative;
+    width: 100%;
+    background-color: var(--sidebar-color);
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+
+.review .content .core-content .content-question .box-question {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.review .content .core-content .content-question .box-question .question-section .text {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.review .content .core-content .content-question .box-question .option-section {
+    margin-top: 2%;
+}
+
+.review .content .core-content .content-question .box-question .option-section button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.review .content .core-content .content-question .box-question .option-section button:hover {
+    background-color: var(--primary-color-hover);
+    border-radius: 20px;
+}
+
+.review .content .core-content .content-question .box-question .option-section button:hover .option {
+    background-color: var(--primary-color);
+}
+
+.review .content .core-content .content-question .box-question .option-section .option {
+    background-color: var(--primary-color-hover);
+    padding: 3px 8px;
+    border-radius: 100%;
+    color: var(--text-color);
+}
+
+.review .content .core-content .content-question .box-question .option-section p {
+    margin-left: 5px;
+    color: var(--text-color);
 }
 
 
