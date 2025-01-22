@@ -1,16 +1,15 @@
 import { useState } from "react";
 import OptionList from "./OptionList";
 import Option from "./Option";
-import Profile from "./Profile";
 import logo from "../assets/logo.png";
-import "./styles.css";
+import "/src/styles.css";
 
 let id = 0;
 const initialMenusUp = [
-  { id: id++, option: "Practice Test", nameIcon: "crown" },
-  { id: id++, option: "History Test", nameIcon: "folder" },
-  { id: id++, option: "About Us", nameIcon: "pin" },
-  { id: id++, option: "Contact Us", nameIcon: "conversation" },
+  { id: id++, option: "Practice Test", nameIcon: "crown", navigate: "/" },
+  { id: id++, option: "History Test", nameIcon: "folder", navigate: "/history-test"  },
+  // { id: id++, option: "About Us", nameIcon: "pin", navigate: "/about-us"  },
+  { id: id++, option: "Contact Us", nameIcon: "conversation", navigate: "/contact-us"  },
 ];
 
 export default function SideBar() {
@@ -39,7 +38,7 @@ export default function SideBar() {
       <div className="menu-bar">
         <OptionList menus={initialMenusUp} />
         <div className="menu-bottom">
-          <Profile option="Adit" nameIcon={"user"} />
+          <Option option="Adit" nameIcon={"user"} path="/profile" />
           <Option option="LogOut" nameIcon={"log-out"} />
         </div>
       </div>

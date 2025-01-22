@@ -1,0 +1,824 @@
+/* Google Font Import  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Colors */
+    --body-color: #1C1714;
+    --card-color: #262524;
+    --sidebar-color: #1D1C1B;
+    --primary-color: #FF7816;
+    --primary-color-hover: #504B48;
+    --toggle-color: #;
+    --text-color: #FFFFFF;
+
+
+    /* Transition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+/* ======= Reusable CSS ======= */
+.sidebar .text {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--tran-02);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar .text.header-text{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .image {
+    /* background-color: yellowgreen; */
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+/* ====== Sidebar ====== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+.sidebar li{
+    /* background-color: yellowgreen; */
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text{
+    color: var(--primary-color-hover)
+}
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar .image-text img{
+    width: 70px;
+    border-radius: 6px;
+    /* background-color: yellow; */
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .icon {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.sidebar.close header .icon {
+    transform: translateY(-50%);
+}
+
+/* ======= Menu Upper SideBar ======= */
+/* .sidebar ul{
+    background-color: purple;
+} */
+
+.sidebar .menu-bar{
+    margin: 30px 0;
+    /* background-color: red; */
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar li {
+    /* background-color: yellowgreen; */
+    height: 8vh;
+}
+
+.sidebar li a{
+    /* background-color: var(--primary-color-hover); */
+    border-radius: 24px;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: var(--tran-02);
+}
+
+.sidebar li a:hover {
+    background-color: var(--primary-color-hover);
+    border-radius: 24px;
+}
+
+.sidebar li a .text {
+    margin: 0 10px;
+    color: var(--primary-color-hover);
+    font-weight: bold;
+}
+
+.sidebar li a .box-icon{
+    width: 17%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: var(--primary-color);
+    border-radius: 12px; */
+    margin: 0 15px;
+}
+
+.sidebar.close li a .box-icon {
+    width: 50%;
+}
+
+.sidebar li a .box-icon .icon {
+    font-size: 25px;
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
+.sidebar li a .icon{
+    color: var(--primary-color-hover);
+}
+
+.sidebar li a .box-icon {
+    /* background-color: var(--primary-color); */
+    border-radius: 12px;
+}
+
+.sidebar li a:hover .box-icon {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+}
+
+/* ====== Bottom Content SideBar ====== */
+.sidebar .menu-bar .menu-bottom {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    /* background-color: var(--sidebar-color); */
+}
+
+.sidebar .menu-bar .profile-link .box-icon {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+}
+
+.sidebar .menu-bar .profile-link .text {
+    color: var(--text-color);
+}
+
+
+/* ========= Section Practice ========= */
+.practice {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close ~ .practice {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.practice .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.practice .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.practice .content .core-content{
+    padding: 20px 40px 20px 40px; /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+}
+
+.practice .content .core-content .box-btn{
+    margin: 20px 0;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: var(--sidebar-color);
+}
+
+.practice .content .core-content .box-btn .btn-Generate {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.practice .content .core-content .box-btn .btn-Generate:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.practice .content .core-content .slot-upload {
+    background-color: var(--card-color);
+    padding: 20px 20px;
+    border: var(--text-color) 1px dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.practice .content .core-content .slot-upload:hover {
+    background-color: var(--primary-color);
+}
+
+.practice .content .core-content .slot-upload .description{
+    display: flex;
+    align-items: center;
+}
+
+.practice .content .core-content .slot-upload .icon{
+    font-size: 30px;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .slot-upload .text-upload {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.practice .content .core-content .slot-upload .child-text {
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .content-question {
+    position: relative;
+    background-color: var(--sidebar-color);
+    height: calc(100% - 23%);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.practice .content .core-content .content-question .box-question{
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.practice .content .core-content .content-question .box-question .question-section .text {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .content-question .box-question .option-section {
+    margin-top: 2%;
+}
+
+.practice .content .core-content .content-question .box-question .option-section button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.practice .content .core-content .content-question .box-question .option-section button:hover {
+    background-color: var(--primary-color-hover);
+    border-radius: 20px;
+}
+
+.practice .content .core-content .content-question .box-question .option-section button:hover .option {
+    background-color: var(--primary-color);
+}
+
+.practice .content .core-content .content-question .box-question .option-section .option {
+    background-color: var(--primary-color-hover);
+    padding: 3px 8px;
+    border-radius: 100%;
+    color: var(--text-color);
+}
+
+.practice .content .core-content .content-question .box-question .option-section p {
+    margin-left: 5px;
+    color: var(--text-color);
+}
+
+
+/* ========= Section history ========= */
+.history {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.history {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.history .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.history .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.history .content .core-content {
+    padding: 20px 40px 20px 40px;
+    /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+}
+
+.history .content .core-content .content-history {
+    position: relative;
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 1%);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.history .content .core-content .box-history {
+    background-color: var(--card-color);
+    width: 100%;
+    border-radius: 24px;
+    margin-bottom: 50px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.history .content .core-content .box-history:hover .more-action {
+    background-color: var(--primary-color);
+}
+
+.history .content .core-content .box-history .more-action {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--primary-color-hover);
+    border-radius: 24px 24px 0px 0px;
+    color: var(--body-color);
+}
+
+.history .content .core-content .box-history .more-action .box-logo {
+    /* background-color: yellowgreen; */
+    padding: 0 0;
+}
+
+.history .content .core-content .box-history .more-action .box-logo img {
+    width: 70px;
+}
+
+.history .content .core-content .box-history .history-section {
+    display: flex;
+    align-items: center;
+}
+
+.history .content .core-content .box-history .history-section .description {
+    width: 85%;
+    background-color: var(--card-color);
+    border-radius: 0px 0px 0px 24px;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.history .content .core-content .box-history .history-section .description .title-history {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--card-color);
+    width: 100%;
+    height: 23px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+}
+
+.history .content .core-content .box-history .history-section .description .date {
+    margin: 10px 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.history .content .core-content .box-history .history-section .score {
+    margin: auto;
+}
+
+.history .content .core-content .box-history .history-section .score .box-score {
+    border-radius: 100%;
+    padding: 20px 20px;
+    background-color: yellowgreen;
+}
+
+/* ========= Section review history ========= */
+.review {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.review {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.review .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.review .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.review .content .core-content {
+    padding: 20px 40px 20px 40px;
+    /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.review .content .core-content .description {
+    background-color: var(--sidebar-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.review .content .core-content .description .title{
+    font-size: 16px;
+    font-weight: bold;
+    /* background-color: var(--primary-color); */
+    width: 90%;
+    height: 23px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+}
+
+.review .content .core-content .description .score {
+    width: max-content;
+}
+
+.review .content .core-content .description .score .box-score {
+    border-radius: 100%;
+    padding: 20px 20px;
+    background-color: yellowgreen;
+}
+
+.review .content .core-content .content-question {
+    position: relative;
+    width: 100%;
+    background-color: var(--sidebar-color);
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+
+.review .content .core-content .content-question .box-question {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.review .content .core-content .content-question .box-question .question-section .text {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.review .content .core-content .content-question .box-question .option-section {
+    margin-top: 2%;
+}
+
+.review .content .core-content .content-question .box-question .option-section button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.review .content .core-content .content-question .box-question .option-section button:hover {
+    background-color: var(--primary-color-hover);
+    border-radius: 20px;
+}
+
+.review .content .core-content .content-question .box-question .option-section button:hover .option {
+    background-color: var(--primary-color);
+}
+
+.review .content .core-content .content-question .box-question .option-section .option {
+    background-color: var(--primary-color-hover);
+    padding: 3px 8px;
+    border-radius: 100%;
+    color: var(--text-color);
+}
+
+.review .content .core-content .content-question .box-question .option-section p {
+    margin-left: 5px;
+    color: var(--text-color);
+}
+
+
+/* ========= Section about ========= */
+.about {
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: purple;
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.about {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+
+/* ========= Section contact ========= */
+.contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.contact {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.contact .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.contact .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.contact .content .core-content {
+    padding: 20px 40px 20px 40px;
+    /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.contact .content .core-content h1 {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+.contact .content .core-content .box-form {
+    margin-top: 50px;
+    background-color: var(--sidebar-color);
+    padding: 20px 40px;
+    width: 70%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    border-radius: 24px;
+    border: 1px solid var(--primary-color-hover);
+}
+
+.contact .content .core-content .box-form label {
+    /* background-color: yellowgreen; */
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.contact .content .core-content .box-form input,
+.contact .content .core-content .box-form textarea {
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--primary-color-hover);
+    border-radius: 8px;
+    background-color: var(--primary-color-hover);
+}
+
+.contact .content .core-content .box-form textarea {
+    height: 150px;
+}
+
+.contact .content .core-content .box-form .box-btn {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.contact .content .core-content .box-form .box-btn .btn-Send {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact .content .core-content .box-form .box-btn .btn-Send:hover {
+    background-color: var(--primary-color-hover);
+}
+
+
+/* ========= Section profile ========= */
+.profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close~.profile {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.profile .content {
+    margin: 3% 0;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 90%;
+}
+
+.profile .content .header-text {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.profile .content .core-content {
+    padding: 20px 40px 20px 40px;
+    /* top right bottom left*/
+    background-color: var(--sidebar-color);
+    width: 100%;
+    height: calc(100% - 4% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.profile .content .core-content .box-content {
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+}
+
+.profile .content .core-content .box-content .box-information {
+    /* background-color: yellow; */
+    margin: 40px 10px;
+}
+
+.profile .content .core-content .box-content .box-information .label {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.profile .content .core-content .box-content .box-information .information {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
